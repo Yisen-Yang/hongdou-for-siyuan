@@ -93,6 +93,9 @@ const ATTR_CITE = CITE_PREFIX + "cite";
 /** 文档级引用样式覆盖（存 styleID）；空表示跟随全局设置 */
 const ATTR_STYLE = CITE_PREFIX + "style";
 
+/** 红豆端配套插件（双向联动）下载页 */
+const BRIDGE_DOWNLOAD_URL = "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/latest";
+
 /**
  * 样式 ID / 标题里出现这些关键词时判为数字式（顺序编码）。
  * 注意别放太宽的词：「science」会误伤 american-political-science-association，
@@ -5001,6 +5004,24 @@ class HongdouPlugin extends Plugin {
             title: i18n.welcomeTitle || "红豆文献联动 · 上手四步",
             width: "640px",
             content: `<div class="hd-welcome">
+  ${this.data.bridgeToken
+        ? `<div class="hd-w-bridge hd-w-bridge--ok">
+    <div class="hd-w-bridge-main">
+        <div class="hd-w-bridge-t">${esc(i18n.welcomeBridgeOkT || "双向联动已配对")}</div>
+        <div class="hd-w-bridge-b">${esc(i18n.welcomeBridgeOkB || "现在可以在红豆里右键文献「发送到思源」，这边会自动插入。")}</div>
+    </div>
+</div>`
+        : `<div class="hd-w-bridge">
+    <div class="hd-w-bridge-main">
+        <div class="hd-w-bridge-t">${esc(i18n.welcomeBridgeT || "想在红豆里右键「发送到思源」？")}</div>
+        <div class="hd-w-bridge-b">${esc(i18n.welcomeBridgeB || "双向联动需要先在红豆里装一个配套插件（Zotero 格式 .xpi），装完两边输一次配对码即可。不装也能正常用引用功能。")}</div>
+        <div class="hd-w-bridge-url">${esc(BRIDGE_DOWNLOAD_URL)}</div>
+    </div>
+    <div class="hd-w-bridge-acts">
+        <button class="b3-button b3-button--text hd-w-dl">${esc(i18n.welcomeBridgeDl || "下载红豆端插件")}</button>
+        <button class="b3-button b3-button--cancel hd-w-copy">${esc(i18n.welcomeBridgeCopy || "复制地址")}</button>
+    </div>
+</div>`}
   <div class="hd-w-head">${esc(i18n.welcomeLead || "红豆管文献，思源写论文。插件通过本机 MCP 直连红豆，不需要额外装插件或配对。")}</div>
   ${step(1, i18n.welcome1t || "确认连得上红豆",
             esc(i18n.welcome1b || "红豆保持运行，插件默认连 127.0.0.1:18500。连不上就到设置里点「测试连接」。"))}
@@ -5030,6 +5051,15 @@ class HongdouPlugin extends Plugin {
         const testBtn = d.element.querySelector(".hd-w-test");
         if (okBtn) okBtn.addEventListener("click", finish);
         if (testBtn) testBtn.addEventListener("click", () => this.checkConnection());
+        const dlBtn = d.element.querySelector(".hd-w-dl");
+        if (dlBtn) dlBtn.addEventListener("click", () => this.openExternal(BRIDGE_DOWNLOAD_URL));
+        const copyBtn = d.element.querySelector(".hd-w-copy");
+        if (copyBtn) copyBtn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(BRIDGE_DOWNLOAD_URL);
+                showMessage(i18n.welcomeBridgeCopied || "下载地址已复制", 2600);
+            } catch (err) { showMessage(BRIDGE_DOWNLOAD_URL, 6000); }
+        });
     }
 
     /** 简单输入对话框，返回 Promise<string|null> */
@@ -5453,12 +5483,24 @@ class HongdouPlugin extends Plugin {
 
         /* ---------------- 红豆桥接（红豆 → 思源 反向推送） ---------------- */
 
+        // 第一项就放下载入口，没装红豆端插件的人一眼能看到
         setting.addItem({
-            title: this.i18n.bridgeSection || "红豆 → 思源 反向推送",
-            description: this.i18n.bridgeSectionDesc || "在红豆里右键文献「发送到思源」，这边自动落笔。需要红豆安装 hongdou-siyuan-bridge 插件并完成配对。",
+            title: this.i18n.bridgeDlTitle || "① 下载红豆端插件（双向联动必备）",
+            description: (this.i18n.bridgeDlDesc || "还没装？下载 hongdou-siyuan-bridge.xpi，在红豆「工具 → 插件中心 → 从文件安装」，重启红豆。地址：%s")
+                .replace("%s", BRIDGE_DOWNLOAD_URL),
             action: {
                 type: "button",
-                label: this.i18n.bridgePairBtn || (d.bridgeToken ? "重新配对" : "配对"),
+                label: this.i18n.bridgeDlBtn || "打开下载页",
+                callback: () => this.openExternal(BRIDGE_DOWNLOAD_URL),
+            },
+        });
+
+        setting.addItem({
+            title: this.i18n.bridgeSection || "② 配对（装好红豆端插件后做这一步）",
+            description: this.i18n.bridgeSectionDesc || "在红豆里点「工具 → 红豆 ↔ 思源：显示配对码」，把 6 位数字填到这里。",
+            action: {
+                type: "button",
+                label: this.i18n.bridgePairBtn || (d.bridgeToken ? "重新配对" : "输入配对码"),
                 callback: () => this.openBridgePair(),
             },
         });

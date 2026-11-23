@@ -312,5 +312,15 @@
   "graphBuilding": "正在扫描全库引用…",
   "graphDone": "已生成索引：%n 篇文献",
   "graphEmpty": "全库还没有任何引用",
-  "graphFail": "生成失败："
+  "graphFail": "生成失败：",
+  "welcomeBridgeT": "想在红豆里右键「发送到思源」？",
+  "welcomeBridgeB": "双向联动需要先在红豆里装一个配套插件（Zotero 格式 .xpi），装完两边输一次配对码即可。不装也能正常用引用功能。",
+  "welcomeBridgeDl": "下载红豆端插件",
+  "welcomeBridgeCopy": "复制地址",
+  "welcomeBridgeCopied": "下载地址已复制",
+  "welcomeBridgeOkT": "双向联动已配对",
+  "welcomeBridgeOkB": "现在可以在红豆里右键文献「发送到思源」，这边会自动插入。",
+  "bridgeDlTitle": "① 下载红豆端插件（双向联动必备）",
+  "bridgeDlDesc": "还没装？下载 hongdou-siyuan-bridge.xpi，在红豆「工具 → 插件中心 → 从文件安装」，重启红豆。地址：%s",
+  "bridgeDlBtn": "打开下载页"
 }

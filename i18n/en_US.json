@@ -312,5 +312,15 @@
   "graphBuilding": "Scanning library-wide citations…",
   "graphDone": "Index built: %n items",
   "graphEmpty": "No citations in the workspace yet",
-  "graphFail": "Build failed: "
+  "graphFail": "Build failed: ",
+  "welcomeBridgeT": "Want \"Send to SiYuan\" from Hongdou?",
+  "welcomeBridgeB": "Two-way sync needs a companion Zotero-format plugin (.xpi) in Hongdou, then pair once with a 6-digit code. Citations work fine without it.",
+  "welcomeBridgeDl": "Download Hongdou plugin",
+  "welcomeBridgeCopy": "Copy URL",
+  "welcomeBridgeCopied": "Download URL copied",
+  "welcomeBridgeOkT": "Two-way sync paired",
+  "welcomeBridgeOkB": "Right-click any item in Hongdou and choose \"Send to SiYuan\" — it will be inserted here.",
+  "bridgeDlTitle": "① Download the Hongdou-side plugin (required for two-way sync)",
+  "bridgeDlDesc": "Not installed yet? Download hongdou-siyuan-bridge.xpi, then in Hongdou use \"Tools → Plugins → Install from file\" and restart. URL: %s",
+  "bridgeDlBtn": "Open download page"
 }
