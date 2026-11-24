@@ -2,7 +2,7 @@
   "name": "hongdou-for-siyuan",
   "author": "Yisen-Yang",
   "url": "https://github.com/Yisen-Yang/hongdou-for-siyuan",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "minAppVersion": "3.8.4",
   "backends": [
     "windows",

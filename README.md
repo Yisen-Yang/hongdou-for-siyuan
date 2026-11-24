@@ -5,6 +5,8 @@
 v0.7 起支持**完整双向联动**：在红豆里右键文献「发送到思源」，思源这边自动落笔——不用切窗口复制粘贴。
 
 > 社区插件，与红豆官方、思源官方均无隶属关系。全程通过红豆自带的本地 MCP 服务通信，不读写红豆数据库文件。
+>
+> **配套的红豆端插件**（反向推送用）：https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/latest
 
 ---
 
@@ -18,13 +20,27 @@ v0.7 起支持**完整双向联动**：在红豆里右键文献「发送到思�
 
 ### 红豆侧（反向推送用，可选）
 
-反向推送需要在红豆里装一个配套的 Zotero 格式插件：
+反向推送需要在红豆里装一个配套的 Zotero 格式插件。**下载地址：**
 
-1. 下载 `hongdou-siyuan-bridge-0.3.0.xpi`；
+| 说明 | 链接 |
+| --- | --- |
+| **直接下载 v0.3.0** | [hongdou-siyuan-bridge-0.3.0.xpi](https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi) |
+| 全部版本 / 更新 | https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases |
+| 仓库源码 | https://github.com/Yisen-Yang/hongdou-siyuan-bridge |
+
+xpi 完整地址（可复制）：
+
+```
+https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi
+```
+
+安装步骤：
+
+1. 下载上面那个 `.xpi` 文件；
 2. 红豆 → 工具 → 插件中心 → **从文件安装** → 选这个 xpi；
 3. 重启红豆；
 4. 红豆菜单「工具 → 红豆 ↔ 思源：显示配对码」，记下 6 位数字；
-5. 思源 → 设置 → 红豆文献联动 → 「配对」→ 输入 6 位码。
+5. 思源 → 设置 → 红豆文献联动 → 「② 配对」→ 输入 6 位码。
 
 配对完成后，在红豆里右键任意文献 →「发送到思源」，2–3 秒内在思源光标处自动插入引用。
 
