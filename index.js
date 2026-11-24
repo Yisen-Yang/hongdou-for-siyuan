@@ -98,7 +98,7 @@ const ATTR_STYLE = CITE_PREFIX + "style";
  * BRIDGE_XPI_URL 是具体到文件的完整地址，点开即下载，不用再在 release 页里找。
  * 注意：升级 bridge 版本时这里要同步改版本号。
  */
-const BRIDGE_XPI_URL = "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi";
+const BRIDGE_XPI_URL = "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi";
 
 /**
  * 样式 ID / 标题里出现这些关键词时判为数字式（顺序编码）。

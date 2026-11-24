@@ -6,7 +6,7 @@ v0.7 起支持**完整双向联动**：在红豆里右键文献「发送到思�
 
 > 社区插件，与红豆官方、思源官方均无隶属关系。全程通过红豆自带的本地 MCP 服务通信，不读写红豆数据库文件。
 >
-> **配套的红豆端插件**（反向推送用）：https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi
+> **配套的红豆端插件**（反向推送用）：https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi
 
 ---
 
@@ -24,14 +24,14 @@ v0.7 起支持**完整双向联动**：在红豆里右键文献「发送到思�
 
 | 说明 | 链接 |
 | --- | --- |
-| **直接下载 v0.3.0** | [hongdou-siyuan-bridge-0.3.0.xpi](https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi) |
+| **直接下载 v0.3.1** | [hongdou-siyuan-bridge-0.3.0.xpi](https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi) |
 | 全部版本 / 更新 | https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases |
 | 仓库源码 | https://github.com/Yisen-Yang/hongdou-siyuan-bridge |
 
 xpi 完整地址（可复制）：
 
 ```
-https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi
+https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi
 ```
 
 安装步骤：
