@@ -6,7 +6,7 @@ v0.7 起支持**完整双向联动**：在红豆里右键文献「发送到思�
 
 > 社区插件，与红豆官方、思源官方均无隶属关系。全程通过红豆自带的本地 MCP 服务通信，不读写红豆数据库文件。
 >
-> **配套的红豆端插件**（反向推送用）：https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/latest
+> **配套的红豆端插件**（反向推送用）：https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi
 
 ---
 
